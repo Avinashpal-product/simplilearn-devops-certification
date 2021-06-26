@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "Avinashpal-product/simplilearn-devops-certification"
+    registry = "avinashpal/simplilearn-devops-certification"
     registryCredential = 'dockerhub'
   }
   agent any
@@ -33,7 +33,7 @@ pipeline {
 
 node {
     stage('Execute Image'){
-        def customImage = docker.build("Avinashpal-product/simplilearn-devops-certification:${env.BUILD_NUMBER}")
+        def customImage = docker.build("avinashpal/simplilearn-devops-certification:${env.BUILD_NUMBER}")
         customImage.inside {
             sh 'echo This is the code executing inside the container.'
         }
