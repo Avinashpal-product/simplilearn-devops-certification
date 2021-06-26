@@ -1,7 +1,7 @@
 pipeline {
   environment {
     registry = "avinashpal/simplilearn-devops-certification"
-    registryCredential = 'dockerhub'
+    registryCredential = 'avinashpal-dockerhub'
   }
   agent any
   stages {
