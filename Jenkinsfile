@@ -1,7 +1,7 @@
 pipeline {
   environment {
-    registry = "https://hub.docker.com/"
-    registryCredential = 'avinashpal-dockerhub'
+    registry = "avinashpal"
+    registryCredential = 'a124bff3-43f2-45a9-95d1-06a883f0208d'
   }
   agent any
   stages {
@@ -16,7 +16,7 @@ pipeline {
         stage('Deploy Image') {
         steps{
             script {
-            docker.withRegistry( '', 'avinashpal-dockerhub' ) {
+            docker.withRegistry( '', 'a124bff3-43f2-45a9-95d1-06a883f0208d' ) {
                 dockerImage.push()
             }
             }
