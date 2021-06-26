@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "avinashpal/simplilearn-devops-certification"
+    registry = "https://hub.docker.com/repository/docker/avinashpal/simplilearn-devops-certification"
     registryCredential = 'avinashpal-dockerhub'
   }
   agent any
@@ -16,7 +16,7 @@ pipeline {
         stage('Deploy Image') {
         steps{
             script {
-            docker.withRegistry( '', 'dockerhub' ) {
+            docker.withRegistry( '', 'avinashpal-dockerhub' ) {
                 dockerImage.push()
             }
             }
